@@ -33,7 +33,7 @@ namespace WebApplication1.Web_forms
             {
                 Session["userName"] = userName;
                 Session["userPassword"] = password;
-                Response.Redirect("Home.aspx");
+                Response.Redirect("Profesor_start.aspx#jan");
             }
             else
                 Response.Write("Incorrect!");

@@ -72,12 +72,17 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Css\login.css" />
+    <Content Include="Css\Profesor_start.css" />
+    <Content Include="Images\blue.jpg" />
+    <Content Include="Images\book.jpg" />
     <Content Include="Images\e-learning.jpg" />
+    <Content Include="Images\gradient.gif" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
     <Content Include="Web_forms\Home.aspx" />
     <Content Include="Web_forms\Login.aspx" />
+    <Content Include="Web_forms\Profesor_start.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Back\Models\User.cs" />
@@ -97,6 +102,13 @@
     </Compile>
     <Compile Include="Web_forms\Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Web_forms\Profesor_start.aspx.cs">
+      <DependentUpon>Profesor_start.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Web_forms\Profesor_start.aspx.designer.cs">
+      <DependentUpon>Profesor_start.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
