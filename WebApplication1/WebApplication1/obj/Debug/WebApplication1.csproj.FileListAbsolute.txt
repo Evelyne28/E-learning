@@ -8,3 +8,13 @@ C:\Users\Eve\Documents\Visual Studio 2013\Projects\WebApplication1\WebApplicatio
 C:\Users\Eve\Documents\Visual Studio 2013\Projects\WebApplication1\WebApplication1\bin\EntityFramework.SqlServer.dll
 C:\Users\Eve\Documents\Visual Studio 2013\Projects\WebApplication1\WebApplication1\bin\EntityFramework.xml
 C:\Users\Eve\Documents\Visual Studio 2013\Projects\WebApplication1\WebApplication1\bin\EntityFramework.SqlServer.xml
+C:\Users\Laura\Documents\E-learning\WebApplication1\WebApplication1\bin\WebApplication1.dll.config
+C:\Users\Laura\Documents\E-learning\WebApplication1\WebApplication1\bin\WebApplication1.dll
+C:\Users\Laura\Documents\E-learning\WebApplication1\WebApplication1\bin\WebApplication1.pdb
+C:\Users\Laura\Documents\E-learning\WebApplication1\WebApplication1\bin\EntityFramework.dll
+C:\Users\Laura\Documents\E-learning\WebApplication1\WebApplication1\bin\EntityFramework.SqlServer.dll
+C:\Users\Laura\Documents\E-learning\WebApplication1\WebApplication1\bin\EntityFramework.xml
+C:\Users\Laura\Documents\E-learning\WebApplication1\WebApplication1\bin\EntityFramework.SqlServer.xml
+C:\Users\Laura\Documents\E-learning\WebApplication1\WebApplication1\obj\Debug\WebApplication1.csprojResolveAssemblyReference.cache
+C:\Users\Laura\Documents\E-learning\WebApplication1\WebApplication1\obj\Debug\WebApplication1.dll
+C:\Users\Laura\Documents\E-learning\WebApplication1\WebApplication1\obj\Debug\WebApplication1.pdb
