@@ -28,8 +28,10 @@ namespace WebApplication1.Web_forms
             {
                 password = Request.Form["userPassword"];
             }
-            User u = controller.findUser(userName, password);
-            if (u != null)
+            Utilizator u = controller.findUser(userName, password);
+            int rol = controller.findUserIdentity(u);
+            //in functie de rolul gasit se afiseaza pagina corespunzatoare
+            if (u != null && rol==2)
             {
                 Session["userName"] = userName;
                 Session["userPassword"] = password;

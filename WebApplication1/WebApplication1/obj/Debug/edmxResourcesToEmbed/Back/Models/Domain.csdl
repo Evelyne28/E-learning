@@ -1,0 +1,370 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ResearchersModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Asistent">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="nume" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="prenume" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Utilizator" Relationship="Self.FK__Asistent__id__108B795B" FromRole="Asistent" ToRole="Utilizator" />
+    <NavigationProperty Name="Tema" Relationship="Self.FK__Tema__idAsistent__21B6055D" FromRole="Asistent" ToRole="Tema" />
+    <NavigationProperty Name="Test" Relationship="Self.FK__Test__idAsistent__29572725" FromRole="Asistent" ToRole="Test" />
+  </EntityType>
+  <EntityType Name="Curs">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="nume" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="numarCredite" Type="Int32" />
+    <Property Name="idProfesor" Type="Int32" />
+    <NavigationProperty Name="Profesor" Relationship="Self.FK__Curs__idProfesor__15502E78" FromRole="Curs" ToRole="Profesor" />
+    <NavigationProperty Name="Inscriere" Relationship="Self.FK__Inscriere__idCur__2F10007B" FromRole="Curs" ToRole="Inscriere" />
+    <NavigationProperty Name="Nota" Relationship="Self.FK__Nota__idCurs__1B0907CE" FromRole="Curs" ToRole="Nota" />
+    <NavigationProperty Name="Test" Relationship="Self.FK__Test__idCurs__267ABA7A" FromRole="Curs" ToRole="Test" />
+  </EntityType>
+  <EntityType Name="Inscriere">
+    <Key>
+      <PropertyRef Name="idStudent" />
+      <PropertyRef Name="idCurs" />
+    </Key>
+    <Property Name="idStudent" Type="Int32" Nullable="false" />
+    <Property Name="idCurs" Type="Int32" Nullable="false" />
+    <Property Name="numeStudent" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="prenumeStudent" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="email" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="parola" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Curs" Relationship="Self.FK__Inscriere__idCur__2F10007B" FromRole="Inscriere" ToRole="Curs" />
+    <NavigationProperty Name="Student" Relationship="Self.FK__Inscriere__idStu__2E1BDC42" FromRole="Inscriere" ToRole="Student" />
+  </EntityType>
+  <EntityType Name="Nota">
+    <Key>
+      <PropertyRef Name="idStudent" />
+      <PropertyRef Name="idCurs" />
+    </Key>
+    <Property Name="idStudent" Type="Int32" Nullable="false" />
+    <Property Name="idCurs" Type="Int32" Nullable="false" />
+    <Property Name="nota1" Type="Int32" />
+    <NavigationProperty Name="Curs" Relationship="Self.FK__Nota__idCurs__1B0907CE" FromRole="Nota" ToRole="Curs" />
+    <NavigationProperty Name="Student" Relationship="Self.FK__Nota__idStudent__1A14E395" FromRole="Nota" ToRole="Student" />
+  </EntityType>
+  <EntityType Name="Profesor">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="nume" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="prenume" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Curs" Relationship="Self.FK__Curs__idProfesor__15502E78" FromRole="Profesor" ToRole="Curs" />
+    <NavigationProperty Name="Utilizator" Relationship="Self.FK__Profesor__id__0BC6C43E" FromRole="Profesor" ToRole="Utilizator" />
+    <NavigationProperty Name="Tema" Relationship="Self.FK__Tema__idProfesor__20C1E124" FromRole="Profesor" ToRole="Tema" />
+    <NavigationProperty Name="Test" Relationship="Self.FK__Test__idProfesor__286302EC" FromRole="Profesor" ToRole="Test" />
+  </EntityType>
+  <EntityType Name="Student">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="nume" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="prenume" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="telefon" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="email" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Inscriere" Relationship="Self.FK__Inscriere__idStu__2E1BDC42" FromRole="Student" ToRole="Inscriere" />
+    <NavigationProperty Name="Nota" Relationship="Self.FK__Nota__idStudent__1A14E395" FromRole="Student" ToRole="Nota" />
+    <NavigationProperty Name="Utilizator" Relationship="Self.FK__Student__id__07020F21" FromRole="Student" ToRole="Utilizator" />
+    <NavigationProperty Name="Tema" Relationship="Self.FK__Tema__idStudent__1FCDBCEB" FromRole="Student" ToRole="Tema" />
+    <NavigationProperty Name="Test" Relationship="Self.FK__Test__idStudent__276EDEB3" FromRole="Student" ToRole="Test" />
+  </EntityType>
+  <EntityType Name="Tema">
+    <Key>
+      <PropertyRef Name="idTema" />
+    </Key>
+    <Property Name="idTema" Type="Int32" Nullable="false" />
+    <Property Name="nota" Type="Int32" />
+    <Property Name="idStudent" Type="Int32" />
+    <Property Name="idProfesor" Type="Int32" />
+    <Property Name="idAsistent" Type="Int32" />
+    <NavigationProperty Name="Asistent" Relationship="Self.FK__Tema__idAsistent__21B6055D" FromRole="Tema" ToRole="Asistent" />
+    <NavigationProperty Name="Profesor" Relationship="Self.FK__Tema__idProfesor__20C1E124" FromRole="Tema" ToRole="Profesor" />
+    <NavigationProperty Name="Student" Relationship="Self.FK__Tema__idStudent__1FCDBCEB" FromRole="Tema" ToRole="Student" />
+  </EntityType>
+  <EntityType Name="Test">
+    <Key>
+      <PropertyRef Name="idTest" />
+    </Key>
+    <Property Name="idTest" Type="Int32" Nullable="false" />
+    <Property Name="idCurs" Type="Int32" />
+    <Property Name="idStudent" Type="Int32" />
+    <Property Name="idProfesor" Type="Int32" />
+    <Property Name="nota" Type="Int32" />
+    <Property Name="idAsistent" Type="Int32" />
+    <NavigationProperty Name="Asistent" Relationship="Self.FK__Test__idAsistent__29572725" FromRole="Test" ToRole="Asistent" />
+    <NavigationProperty Name="Curs" Relationship="Self.FK__Test__idCurs__267ABA7A" FromRole="Test" ToRole="Curs" />
+    <NavigationProperty Name="Profesor" Relationship="Self.FK__Test__idProfesor__286302EC" FromRole="Test" ToRole="Profesor" />
+    <NavigationProperty Name="Student" Relationship="Self.FK__Test__idStudent__276EDEB3" FromRole="Test" ToRole="Student" />
+  </EntityType>
+  <EntityType Name="Utilizator">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="username" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="parola" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="rol" Type="Int32" />
+    <NavigationProperty Name="Asistent" Relationship="Self.FK__Asistent__id__108B795B" FromRole="Utilizator" ToRole="Asistent" />
+    <NavigationProperty Name="Profesor" Relationship="Self.FK__Profesor__id__0BC6C43E" FromRole="Utilizator" ToRole="Profesor" />
+    <NavigationProperty Name="Student" Relationship="Self.FK__Student__id__07020F21" FromRole="Utilizator" ToRole="Student" />
+  </EntityType>
+  <Association Name="FK__Asistent__id__108B795B">
+    <End Role="Utilizator" Type="Self.Utilizator" Multiplicity="1" />
+    <End Role="Asistent" Type="Self.Asistent" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Utilizator">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Asistent">
+        <PropertyRef Name="id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Tema__idAsistent__21B6055D">
+    <End Role="Asistent" Type="Self.Asistent" Multiplicity="0..1" />
+    <End Role="Tema" Type="Self.Tema" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Asistent">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Tema">
+        <PropertyRef Name="idAsistent" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Test__idAsistent__29572725">
+    <End Role="Asistent" Type="Self.Asistent" Multiplicity="0..1" />
+    <End Role="Test" Type="Self.Test" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Asistent">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Test">
+        <PropertyRef Name="idAsistent" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Curs__idProfesor__15502E78">
+    <End Role="Profesor" Type="Self.Profesor" Multiplicity="0..1" />
+    <End Role="Curs" Type="Self.Curs" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Profesor">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Curs">
+        <PropertyRef Name="idProfesor" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Inscriere__idCur__2F10007B">
+    <End Role="Curs" Type="Self.Curs" Multiplicity="1" />
+    <End Role="Inscriere" Type="Self.Inscriere" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Curs">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Inscriere">
+        <PropertyRef Name="idCurs" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Nota__idCurs__1B0907CE">
+    <End Role="Curs" Type="Self.Curs" Multiplicity="1" />
+    <End Role="Nota" Type="Self.Nota" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Curs">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Nota">
+        <PropertyRef Name="idCurs" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Test__idCurs__267ABA7A">
+    <End Role="Curs" Type="Self.Curs" Multiplicity="0..1" />
+    <End Role="Test" Type="Self.Test" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Curs">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Test">
+        <PropertyRef Name="idCurs" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Inscriere__idStu__2E1BDC42">
+    <End Role="Student" Type="Self.Student" Multiplicity="1" />
+    <End Role="Inscriere" Type="Self.Inscriere" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Student">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Inscriere">
+        <PropertyRef Name="idStudent" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Nota__idStudent__1A14E395">
+    <End Role="Student" Type="Self.Student" Multiplicity="1" />
+    <End Role="Nota" Type="Self.Nota" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Student">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Nota">
+        <PropertyRef Name="idStudent" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Profesor__id__0BC6C43E">
+    <End Role="Utilizator" Type="Self.Utilizator" Multiplicity="1" />
+    <End Role="Profesor" Type="Self.Profesor" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Utilizator">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Profesor">
+        <PropertyRef Name="id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Tema__idProfesor__20C1E124">
+    <End Role="Profesor" Type="Self.Profesor" Multiplicity="0..1" />
+    <End Role="Tema" Type="Self.Tema" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Profesor">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Tema">
+        <PropertyRef Name="idProfesor" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Test__idProfesor__286302EC">
+    <End Role="Profesor" Type="Self.Profesor" Multiplicity="0..1" />
+    <End Role="Test" Type="Self.Test" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Profesor">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Test">
+        <PropertyRef Name="idProfesor" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Student__id__07020F21">
+    <End Role="Utilizator" Type="Self.Utilizator" Multiplicity="1" />
+    <End Role="Student" Type="Self.Student" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Utilizator">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Student">
+        <PropertyRef Name="id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Tema__idStudent__1FCDBCEB">
+    <End Role="Student" Type="Self.Student" Multiplicity="0..1" />
+    <End Role="Tema" Type="Self.Tema" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Student">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Tema">
+        <PropertyRef Name="idStudent" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Test__idStudent__276EDEB3">
+    <End Role="Student" Type="Self.Student" Multiplicity="0..1" />
+    <End Role="Test" Type="Self.Test" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Student">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Test">
+        <PropertyRef Name="idStudent" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="ResearchersEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Asistent" EntityType="Self.Asistent" />
+    <EntitySet Name="Curs" EntityType="Self.Curs" />
+    <EntitySet Name="Inscriere" EntityType="Self.Inscriere" />
+    <EntitySet Name="Nota" EntityType="Self.Nota" />
+    <EntitySet Name="Profesor" EntityType="Self.Profesor" />
+    <EntitySet Name="Student" EntityType="Self.Student" />
+    <EntitySet Name="Tema" EntityType="Self.Tema" />
+    <EntitySet Name="Test" EntityType="Self.Test" />
+    <EntitySet Name="Utilizator" EntityType="Self.Utilizator" />
+    <AssociationSet Name="FK__Asistent__id__108B795B" Association="Self.FK__Asistent__id__108B795B">
+      <End Role="Utilizator" EntitySet="Utilizator" />
+      <End Role="Asistent" EntitySet="Asistent" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Tema__idAsistent__21B6055D" Association="Self.FK__Tema__idAsistent__21B6055D">
+      <End Role="Asistent" EntitySet="Asistent" />
+      <End Role="Tema" EntitySet="Tema" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Test__idAsistent__29572725" Association="Self.FK__Test__idAsistent__29572725">
+      <End Role="Asistent" EntitySet="Asistent" />
+      <End Role="Test" EntitySet="Test" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Curs__idProfesor__15502E78" Association="Self.FK__Curs__idProfesor__15502E78">
+      <End Role="Profesor" EntitySet="Profesor" />
+      <End Role="Curs" EntitySet="Curs" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Inscriere__idCur__2F10007B" Association="Self.FK__Inscriere__idCur__2F10007B">
+      <End Role="Curs" EntitySet="Curs" />
+      <End Role="Inscriere" EntitySet="Inscriere" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Nota__idCurs__1B0907CE" Association="Self.FK__Nota__idCurs__1B0907CE">
+      <End Role="Curs" EntitySet="Curs" />
+      <End Role="Nota" EntitySet="Nota" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Test__idCurs__267ABA7A" Association="Self.FK__Test__idCurs__267ABA7A">
+      <End Role="Curs" EntitySet="Curs" />
+      <End Role="Test" EntitySet="Test" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Inscriere__idStu__2E1BDC42" Association="Self.FK__Inscriere__idStu__2E1BDC42">
+      <End Role="Student" EntitySet="Student" />
+      <End Role="Inscriere" EntitySet="Inscriere" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Nota__idStudent__1A14E395" Association="Self.FK__Nota__idStudent__1A14E395">
+      <End Role="Student" EntitySet="Student" />
+      <End Role="Nota" EntitySet="Nota" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Profesor__id__0BC6C43E" Association="Self.FK__Profesor__id__0BC6C43E">
+      <End Role="Utilizator" EntitySet="Utilizator" />
+      <End Role="Profesor" EntitySet="Profesor" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Tema__idProfesor__20C1E124" Association="Self.FK__Tema__idProfesor__20C1E124">
+      <End Role="Profesor" EntitySet="Profesor" />
+      <End Role="Tema" EntitySet="Tema" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Test__idProfesor__286302EC" Association="Self.FK__Test__idProfesor__286302EC">
+      <End Role="Profesor" EntitySet="Profesor" />
+      <End Role="Test" EntitySet="Test" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Student__id__07020F21" Association="Self.FK__Student__id__07020F21">
+      <End Role="Utilizator" EntitySet="Utilizator" />
+      <End Role="Student" EntitySet="Student" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Tema__idStudent__1FCDBCEB" Association="Self.FK__Tema__idStudent__1FCDBCEB">
+      <End Role="Student" EntitySet="Student" />
+      <End Role="Tema" EntitySet="Tema" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Test__idStudent__276EDEB3" Association="Self.FK__Test__idStudent__276EDEB3">
+      <End Role="Student" EntitySet="Student" />
+      <End Role="Test" EntitySet="Test" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

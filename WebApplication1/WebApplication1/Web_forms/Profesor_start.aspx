@@ -15,7 +15,7 @@
     </form>
     <div class="outer">
 			<div class="header">
-				<p id="welcome"> Welcome </p>
+				<p id="welcome"> Welcome <%:Session["userName"]%> </p>
 				<a href="http://www.w3schools.com" class="headerRight">Log out</a>
 				<a href="http://www.w3schools.com" class="headerRight" >Forum</a>
 				<a href="http://www.w3schools.com" class="headerRight" >Mesaje</a>
