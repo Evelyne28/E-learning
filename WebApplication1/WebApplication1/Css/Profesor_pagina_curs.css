@@ -1,0 +1,89 @@
+﻿body {
+	margin: 0px;
+	height: 100%;
+}
+
+.outer {
+	width: 100%;
+	height: 100%;
+}
+
+.header {
+	height: 100px;
+	background-image: url('../Images/gradient.gif');
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: bottom;
+}
+
+#welcome {
+	margin: 0px;
+	left: 2%;
+	top: 5px;
+	position: relative;
+	font-size: 25px;
+}
+
+.headerRight {
+	float: right;
+	padding: 5px;
+}
+
+.inner {
+	width:100%;
+	padding-left: 25px;
+	float:left;
+}
+.butoaneTeme{margin:15px 200px 15px 15px;float:left; }
+.butoaneTeme #button{
+	width:130px;
+	margin:5px;
+	border-radius: 5px;
+	font-size: 15px;
+	font-family: 'PT Mono', sans-serif;
+	background-color:#66CCCC;
+}
+.butoane{margin:15px 200px 15px 15px; width:141px; float:left;}
+.butoane #button{
+	width:130px;
+	margin:5px;
+	border-radius: 5px;
+	font-size: 15px;
+	font-family: 'PT Mono', sans-serif;
+	background-color:#66CCCC;
+}
+#teme{
+  margin:20px 20px 20px 20px;
+  font-size: 20px;
+  text-align: left;
+  font-family: 'PT Mono', sans-serif;
+  float:left;
+}
+#cursuri{
+  margin:20px 20px 20px 20px;
+  font-size: 20px;
+  text-align: left;
+  font-family: 'PT Mono', sans-serif;
+  float: left;
+}
+#catalog{
+	margin:20px;
+	width:150px;
+	height:60px;
+	font-size: 20px;
+	font-family: 'PT Mono', sans-serif;
+	border-radius: 5px;
+	background-color:#66CCCC;
+}
+p{
+	font-size: 20px;
+	font-family: 'PT Mono', sans-serif;
+	}
+.stud{
+	height:100px;
+	width:200px;
+}
+.studenti{
+	float:left;
+}
+

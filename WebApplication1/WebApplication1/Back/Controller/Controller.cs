@@ -15,15 +15,19 @@ namespace WebApplication1.Back.ControllerNamespace
             this.repo = new Repository();
         }
 
-        public List<User> getUsers()
+        public List<Utilizator> getUsers()
         {
             return repo.getUsers();
         }
 
-        public User findUser(String name, String password)
+        public Utilizator findUser(String nume, String parola)
         {
-            Console.WriteLine("findUser" + name + password);
-            return repo.findUser(name, password);
+            return repo.findUser(nume, parola);
+        }
+
+        public int findUserIdentity(Utilizator u)
+        {
+            return repo.findUserIdentity(u);
         }
     }
 }

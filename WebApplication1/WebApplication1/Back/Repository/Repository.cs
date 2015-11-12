@@ -10,84 +10,68 @@ namespace WebApplication1.Back.RepositoryNamespace
 {
     public class Repository
     {
-        public List<User> users;
+        public List<Utilizator> users;
+        public List<Profesor> profesori;
         public Repository()
         {
-            this.users = new List<User>();
-            populate();
+            this.users = this.getUsers();
+            this.profesori = this.getListaProfesori();
         }
 
-        public void populate()
+       
+        //gaseste utilizatorul dupa user si parola si il returneaza
+        public Utilizator findUser(String nume, String parola)
         {
-            try
+            List<Utilizator> lista = this.getUsers();
+            foreach (Utilizator u in lista)
             {
-                using (OdbcConnection connection = new OdbcConnection(WebConfigurationManager.ConnectionStrings["MySQLConnStr"].ConnectionString))
-                {
-                    connection.Open();
-                    using (OdbcCommand command = new OdbcCommand("SELECT * FROM User", connection))
-                    using (OdbcDataReader dr = command.ExecuteReader())
-                    {
-                        while (dr.Read())
-                        {
-                            int idUser = Convert.ToInt32(dr["idUser"].ToString());
-                            String name = dr["name"].ToString();
-                            String password = dr["password"].ToString();
-                            String eMail = dr["eMail"].ToString();
-                            DateTime birthDate = Convert.ToDateTime(dr["birthdate"].ToString());
-                            int status = Convert.ToInt32(dr["status"].ToString());
-                            User user = new User(idUser, name, password, eMail, birthDate, status);
-                            users.Add(user);
-                            //Response.Write(dr["nameB"].ToString() + "<br />");
-                        }
-                        dr.Close();
-                    }
-                    connection.Close();
-                }
+                if (u.username.Equals(nume) && u.parola.Equals(parola))
+                    return u;
             }
-            catch (Exception ex)
-            {
-                //Response.Write("An error occured: " + ex.Message);
-                users = null;
-            }
+            return null;
         }
 
-        public User findUser(String username, String userpassword)
+        //returneaza rolul utilizatorului (0=admin; 1=student; 2=profesor; 3=asistent)
+        public int findUserIdentity(Utilizator ut)
         {
-            User user = null;
-            try
-            {
-                using (OdbcConnection connection = new OdbcConnection(WebConfigurationManager.ConnectionStrings["MySQLConnStr"].ConnectionString))
-                {
-                    connection.Open();
-                    using (OdbcCommand command = new OdbcCommand("SELECT * FROM User where name = '" + username + "' and  password = '" + userpassword + "'", connection))
-                    using (OdbcDataReader dr = command.ExecuteReader())
-                    {
-                        while (dr.Read())
-                        {
-                            int idUser = Convert.ToInt32(dr["idUser"].ToString());
-                            String name = dr["name"].ToString();
-                            String password = dr["password"].ToString();
-                            String eMail = dr["eMail"].ToString();
-                            DateTime birthDate = Convert.ToDateTime(dr["birthdate"].ToString());
-                            int status = Convert.ToInt32(dr["status"].ToString());
-                            user = new User(idUser, name, password, eMail, birthDate, status);
-                           // Response.Write(dr["nameB"].ToString() + "<br />");
-                        }
-                        dr.Close();
-                    }
-                    connection.Close();
-                }
-            }
-            catch (Exception ex)
-            {
-                //Response.Write("An error occured: " + ex.Message);
-                user = null;
-            }
-            return user;
+            return (int)ut.rol;
         }
 
-        public List<User> getUsers()
+        //returneaza profesorul in functie de id
+        public Profesor getProfesor(int id)
         {
+            foreach (Profesor p in profesori)
+            {
+                if (p.id == id)
+                    return p;
+            }
+            return null;
+        }
+
+        //populeaza lista de profesori din baza de date si o returneaza
+        public List<Profesor> getListaProfesori()
+        {
+            profesori = new List<Profesor>();
+            ResearchersEntities context = new ResearchersEntities();
+            var load = from a in context.Profesor select a;
+            if (load != null)
+            {
+                profesori = load.ToList();
+            }
+            return this.profesori;
+        }
+
+       
+        //populeaza lista de utilizatori din baza de date si o returneaza
+        public List<Utilizator> getUsers()
+        {
+            users = new List<Utilizator>();
+            ResearchersEntities context = new ResearchersEntities();
+            var load = from a in context.Utilizator select a;
+            if (load != null)
+            {
+                users = load.ToList();
+            }
             return this.users;
         }
     }

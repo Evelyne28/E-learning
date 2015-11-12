@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ResearchersModelStoreContainer" CdmEntityContainer="ResearchersEntities">
+    <EntitySetMapping Name="Asistent">
+      <EntityTypeMapping TypeName="ResearchersModel.Asistent">
+        <MappingFragment StoreEntitySet="Asistent">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="nume" ColumnName="nume" />
+          <ScalarProperty Name="prenume" ColumnName="prenume" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Curs">
+      <EntityTypeMapping TypeName="ResearchersModel.Curs">
+        <MappingFragment StoreEntitySet="Curs">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="nume" ColumnName="nume" />
+          <ScalarProperty Name="numarCredite" ColumnName="numarCredite" />
+          <ScalarProperty Name="idProfesor" ColumnName="idProfesor" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Inscriere">
+      <EntityTypeMapping TypeName="ResearchersModel.Inscriere">
+        <MappingFragment StoreEntitySet="Inscriere">
+          <ScalarProperty Name="idStudent" ColumnName="idStudent" />
+          <ScalarProperty Name="idCurs" ColumnName="idCurs" />
+          <ScalarProperty Name="numeStudent" ColumnName="numeStudent" />
+          <ScalarProperty Name="prenumeStudent" ColumnName="prenumeStudent" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="parola" ColumnName="parola" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Nota">
+      <EntityTypeMapping TypeName="ResearchersModel.Nota">
+        <MappingFragment StoreEntitySet="Nota">
+          <ScalarProperty Name="idStudent" ColumnName="idStudent" />
+          <ScalarProperty Name="idCurs" ColumnName="idCurs" />
+          <ScalarProperty Name="nota1" ColumnName="nota" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Profesor">
+      <EntityTypeMapping TypeName="ResearchersModel.Profesor">
+        <MappingFragment StoreEntitySet="Profesor">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="nume" ColumnName="nume" />
+          <ScalarProperty Name="prenume" ColumnName="prenume" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Student">
+      <EntityTypeMapping TypeName="ResearchersModel.Student">
+        <MappingFragment StoreEntitySet="Student">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="nume" ColumnName="nume" />
+          <ScalarProperty Name="prenume" ColumnName="prenume" />
+          <ScalarProperty Name="telefon" ColumnName="telefon" />
+          <ScalarProperty Name="email" ColumnName="email" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tema">
+      <EntityTypeMapping TypeName="ResearchersModel.Tema">
+        <MappingFragment StoreEntitySet="Tema">
+          <ScalarProperty Name="idTema" ColumnName="idTema" />
+          <ScalarProperty Name="nota" ColumnName="nota" />
+          <ScalarProperty Name="idStudent" ColumnName="idStudent" />
+          <ScalarProperty Name="idProfesor" ColumnName="idProfesor" />
+          <ScalarProperty Name="idAsistent" ColumnName="idAsistent" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Test">
+      <EntityTypeMapping TypeName="ResearchersModel.Test">
+        <MappingFragment StoreEntitySet="Test">
+          <ScalarProperty Name="idTest" ColumnName="idTest" />
+          <ScalarProperty Name="idCurs" ColumnName="idCurs" />
+          <ScalarProperty Name="idStudent" ColumnName="idStudent" />
+          <ScalarProperty Name="idProfesor" ColumnName="idProfesor" />
+          <ScalarProperty Name="nota" ColumnName="nota" />
+          <ScalarProperty Name="idAsistent" ColumnName="idAsistent" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Utilizator">
+      <EntityTypeMapping TypeName="ResearchersModel.Utilizator">
+        <MappingFragment StoreEntitySet="Utilizator">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="parola" ColumnName="parola" />
+          <ScalarProperty Name="rol" ColumnName="rol" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

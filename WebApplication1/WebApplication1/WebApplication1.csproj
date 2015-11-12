@@ -49,16 +49,17 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\..\..\..\Program Files (x86)\MySQL\Connector.NET 6.9\Assemblies\v4.0\MySql.Data.dll</HintPath>
     </Reference>
-    <Reference Include="MySql.Web, Version=6.9.5.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\MySQL\Connector.NET 6.9\Assemblies\v4.0\MySql.Web.dll</HintPath>
-    </Reference>
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System" />
-    <Reference Include="System.Data" />
+    <Reference Include="System.Data">
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Web.Extensions" />
@@ -71,7 +72,10 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Css\Asistent_start.css" />
+    <Content Include="Css\Calendar.css" />
     <Content Include="Css\login.css" />
+    <Content Include="Css\Profesor_pagina_curs.css" />
     <Content Include="Css\Profesor_start.css" />
     <Content Include="Images\blue.jpg" />
     <Content Include="Images\book.jpg" />
@@ -80,15 +84,73 @@
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
+    <Content Include="Web_forms\Asistent_start.aspx" />
+    <Content Include="Web_forms\Calendar.aspx" />
     <Content Include="Web_forms\Home.aspx" />
     <Content Include="Web_forms\Login.aspx" />
+    <Content Include="Web_forms\Profesor_pagina_curs.aspx" />
     <Content Include="Web_forms\Profesor_start.aspx" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Back\Models\User.cs" />
+    <Compile Include="Back\Models\Asistent.cs">
+      <DependentUpon>Domain.tt</DependentUpon>
+    </Compile>
     <Compile Include="Back\Repository\Repository.cs" />
     <Compile Include="Back\Controller\Controller.cs" />
+    <Compile Include="Back\Models\Curs.cs">
+      <DependentUpon>Domain.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Back\Models\Domain.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Domain.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Back\Models\Domain.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Domain.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Back\Models\Domain.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Domain.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Back\Models\Inscriere.cs">
+      <DependentUpon>Domain.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Back\Models\Nota.cs">
+      <DependentUpon>Domain.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Back\Models\Profesor.cs">
+      <DependentUpon>Domain.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Back\Models\Student.cs">
+      <DependentUpon>Domain.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Back\Models\Tema.cs">
+      <DependentUpon>Domain.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Back\Models\Test.cs">
+      <DependentUpon>Domain.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Back\Models\Utilizator.cs">
+      <DependentUpon>Domain.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Web_forms\Asistent_start.aspx.cs">
+      <DependentUpon>Asistent_start.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Web_forms\Asistent_start.aspx.designer.cs">
+      <DependentUpon>Asistent_start.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Web_forms\Calendar.aspx.cs">
+      <DependentUpon>Calendar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Web_forms\Calendar.aspx.designer.cs">
+      <DependentUpon>Calendar.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Web_forms\Home.aspx.cs">
       <DependentUpon>Home.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -103,6 +165,13 @@
     <Compile Include="Web_forms\Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Web_forms\Profesor_pagina_curs.aspx.cs">
+      <DependentUpon>Profesor_pagina_curs.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Web_forms\Profesor_pagina_curs.aspx.designer.cs">
+      <DependentUpon>Profesor_pagina_curs.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Web_forms\Profesor_start.aspx.cs">
       <DependentUpon>Profesor_start.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -113,12 +182,32 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
+    <EntityDeploy Include="Back\Models\Domain.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Domain.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Back\Models\Domain.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Domain.edmx</DependentUpon>
+      <LastGenOutput>Domain.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Back\Models\Domain.edmx.diagram">
+      <DependentUpon>Domain.edmx</DependentUpon>
+    </Content>
+    <Content Include="Back\Models\Domain.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Domain.edmx</DependentUpon>
+      <LastGenOutput>Domain.cs</LastGenOutput>
+    </Content>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup />
   <PropertyGroup>

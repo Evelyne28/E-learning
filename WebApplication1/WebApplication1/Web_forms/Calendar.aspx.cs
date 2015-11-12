@@ -7,14 +7,11 @@ using System.Web.UI.WebControls;
 
 namespace WebApplication1.Web_forms
 {
-    public partial class Profesor_start : System.Web.UI.Page
+    public partial class Calendar : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-           //String userName = Session["userName"] as string;
-           //String password = Session["userPassword"] as string;
-           //Response.Write("Welcome, " + userName);
-        }
 
+        }
     }
 }

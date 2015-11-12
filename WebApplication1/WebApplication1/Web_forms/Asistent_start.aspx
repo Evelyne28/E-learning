@@ -1,12 +1,12 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Profesor_start.aspx.cs" Inherits="WebApplication1.Web_forms.Profesor_start" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Asistent_start.aspx.cs" Inherits="WebApplication1.Web_forms.Asistent_start" %>
 
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title>Profesor</title>
-    <link rel="stylesheet" type="text/css" href="~/Css/Profesor_start.css">
-   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js" type="text/javascript"></script> 
+    <title>Asistent</title>
+    <link rel="stylesheet" type="text/css" href="~/Css/Asistent_start.css">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js" type="text/javascript"></script> 
 	<script > 
 	$(document).ready(function(){
 		document.getElementById("calendar").innerHTML='<object id="calendar" type="text/html" data="Calendar.aspx#jan"></object>';
@@ -30,7 +30,7 @@
 			<div class="inner">
 				<div id = "cursuri">  Cursuri  </div>
 				<div class="img">
-				        <a target="_blank" href="Profesor_pagina_curs.aspx">
+				        <a target="_blank" href="https://www.google.com">
 				            <img src="../Images/book.jpg">
 				        </a>
 				    <div class="desc">Curs 1</div>
@@ -50,9 +50,16 @@
 				    <div class="desc">Curs 3</div>
 				</div>
 
+			<!-- 	<div class="img">
+				    <a target="_blank" href="https://www.google.com">
+				        <img src="book.jpg">
+				    </a>
+				    <div class="desc">Curs 3</div>
+				</div> -->
+
 			</div>
 			
 		</div>
-    <div id="calendar"></div>
+	<div id="calendar"></div>
 </body>
 </html>
