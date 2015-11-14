@@ -33,3 +33,14 @@ C:\Users\ANCUTA\Documents\E-learning\WebApplication1\WebApplication1\obj\Debug\W
 C:\Users\ANCUTA\Documents\E-learning\WebApplication1\WebApplication1\obj\Debug\WebApplication1.pdb
 >>>>>>> 4209f1ba7b7a5922f33b2d2cce8814c786b876f1
 C:\Users\Laura\Documents\E-learning\WebApplication1\WebApplication1\bin\System.Data.dll
+C:\Users\Eve\Desktop\cevs\WebApplication1\WebApplication1\bin\WebApplication1.dll.config
+C:\Users\Eve\Desktop\cevs\WebApplication1\WebApplication1\bin\WebApplication1.dll
+C:\Users\Eve\Desktop\cevs\WebApplication1\WebApplication1\bin\WebApplication1.pdb
+C:\Users\Eve\Desktop\cevs\WebApplication1\WebApplication1\bin\EntityFramework.dll
+C:\Users\Eve\Desktop\cevs\WebApplication1\WebApplication1\bin\EntityFramework.SqlServer.dll
+C:\Users\Eve\Desktop\cevs\WebApplication1\WebApplication1\bin\System.Data.dll
+C:\Users\Eve\Desktop\cevs\WebApplication1\WebApplication1\bin\EntityFramework.xml
+C:\Users\Eve\Desktop\cevs\WebApplication1\WebApplication1\bin\EntityFramework.SqlServer.xml
+C:\Users\Eve\Desktop\cevs\WebApplication1\WebApplication1\obj\Debug\WebApplication1.csprojResolveAssemblyReference.cache
+C:\Users\Eve\Desktop\cevs\WebApplication1\WebApplication1\obj\Debug\WebApplication1.dll
+C:\Users\Eve\Desktop\cevs\WebApplication1\WebApplication1\obj\Debug\WebApplication1.pdb
