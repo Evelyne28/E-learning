@@ -12,27 +12,18 @@ namespace WebApplication1.Back.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class Asistent
+    public partial class Intrebare
     {
-        public Asistent()
+        public Intrebare()
         {
-            this.Tema = new HashSet<Tema>();
-            this.Test = new HashSet<Test>();
+            this.Raspuns = new HashSet<Raspuns>();
         }
     
         public int id { get; set; }
-        public string nume { get; set; }
-        public string prenume { get; set; }
+        public string mesaj { get; set; }
+        public string utilizator { get; set; }
+        public Nullable<System.DateTime> dataIntrebare { get; set; }
     
-        public virtual Utilizator Utilizator { get; set; }
-        public virtual ICollection<Tema> Tema { get; set; }
-        public virtual ICollection<Test> Test { get; set; }
-
-        public Asistent(int id, string nume, string prenume)
-        {
-            this.id = id;
-            this.nume = nume;
-            this.prenume = prenume;
-        }
+        public virtual ICollection<Raspuns> Raspuns { get; set; }
     }
 }

@@ -29,5 +29,20 @@ namespace WebApplication1.Back.ControllerNamespace
         {
             return repo.findUserIdentity(u);
         }
+
+        public bool adaugaUtiliz(int id,string nume,string prenume,string email,string telefon,int rol, string user, string parola)
+        {
+            return repo.adaugaUtiliz(id,nume,prenume,email,telefon,rol, user, parola);
+        }
+
+        public bool stergeUtiliz(int id)
+        {
+            return repo.stergeUtiliz(id);
+        }
+
+        public bool modificaUtiliz(int id, string numeN, string prenumeN, string emailN, string telefonN, string parolaN)
+        {
+            return repo.modificaUtiliz(id, numeN, prenumeN, emailN, telefonN,parolaN);
+        }
     }
 }

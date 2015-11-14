@@ -13,10 +13,10 @@ namespace WebApplication1.Back.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class ResearchersEntities : DbContext
+    public partial class ResearchersEntities2 : DbContext
     {
-        public ResearchersEntities()
-            : base("name=ResearchersEntities")
+        public ResearchersEntities2()
+            : base("name=ResearchersEntities2")
         {
         }
     
@@ -27,9 +27,12 @@ namespace WebApplication1.Back.Models
     
         public virtual DbSet<Asistent> Asistent { get; set; }
         public virtual DbSet<Curs> Curs { get; set; }
+        public virtual DbSet<DenumireCursuri> DenumireCursuri { get; set; }
         public virtual DbSet<Inscriere> Inscriere { get; set; }
+        public virtual DbSet<Intrebare> Intrebare { get; set; }
         public virtual DbSet<Nota> Nota { get; set; }
         public virtual DbSet<Profesor> Profesor { get; set; }
+        public virtual DbSet<Raspuns> Raspuns { get; set; }
         public virtual DbSet<Student> Student { get; set; }
         public virtual DbSet<Tema> Tema { get; set; }
         public virtual DbSet<Test> Test { get; set; }
