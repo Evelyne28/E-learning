@@ -17,6 +17,14 @@
     <Property Name="numarCredite" Type="int" />
     <Property Name="idProfesor" Type="int" />
   </EntityType>
+  <EntityType Name="DenumireCursuri">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="idCurs" Type="int" />
+    <Property Name="denumire" Type="varchar" MaxLength="50" />
+  </EntityType>
   <EntityType Name="Inscriere">
     <Key>
       <PropertyRef Name="idStudent" />
@@ -28,6 +36,15 @@
     <Property Name="prenumeStudent" Type="varchar" MaxLength="50" />
     <Property Name="email" Type="varchar" MaxLength="30" />
     <Property Name="parola" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="Intrebare">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="mesaj" Type="varchar" MaxLength="5000" />
+    <Property Name="utilizator" Type="varchar" MaxLength="50" />
+    <Property Name="dataIntrebare" Type="datetime" />
   </EntityType>
   <EntityType Name="Nota">
     <Key>
@@ -45,6 +62,16 @@
     <Property Name="id" Type="int" Nullable="false" />
     <Property Name="nume" Type="varchar" MaxLength="50" />
     <Property Name="prenume" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Raspuns">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="idIntrebare" Type="int" />
+    <Property Name="mesaj" Type="varchar" MaxLength="5000" />
+    <Property Name="utilizator" Type="varchar" MaxLength="50" />
+    <Property Name="dataRaspuns" Type="datetime" />
   </EntityType>
   <EntityType Name="Student">
     <Key>
@@ -110,6 +137,18 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK__DenumireC__idCur__34C8D9D1">
+    <End Role="Curs" Type="Self.Curs" Multiplicity="0..1" />
+    <End Role="DenumireCursuri" Type="Self.DenumireCursuri" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Curs">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="DenumireCursuri">
+        <PropertyRef Name="idCurs" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK__Inscriere__idCur__2F10007B">
     <End Role="Curs" Type="Self.Curs" Multiplicity="1" />
     <End Role="Inscriere" Type="Self.Inscriere" Multiplicity="*" />
@@ -167,6 +206,18 @@
       </Principal>
       <Dependent Role="Profesor">
         <PropertyRef Name="id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Raspuns__idIntre__3D5E1FD2">
+    <End Role="Intrebare" Type="Self.Intrebare" Multiplicity="0..1" />
+    <End Role="Raspuns" Type="Self.Raspuns" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Intrebare">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Raspuns">
+        <PropertyRef Name="idIntrebare" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -269,9 +320,12 @@
   <EntityContainer Name="ResearchersModelStoreContainer">
     <EntitySet Name="Asistent" EntityType="Self.Asistent" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Curs" EntityType="Self.Curs" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DenumireCursuri" EntityType="Self.DenumireCursuri" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Inscriere" EntityType="Self.Inscriere" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Intrebare" EntityType="Self.Intrebare" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Nota" EntityType="Self.Nota" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Profesor" EntityType="Self.Profesor" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Raspuns" EntityType="Self.Raspuns" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Student" EntityType="Self.Student" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Tema" EntityType="Self.Tema" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Test" EntityType="Self.Test" Schema="dbo" store:Type="Tables" />
@@ -283,6 +337,10 @@
     <AssociationSet Name="FK__Curs__idProfesor__15502E78" Association="Self.FK__Curs__idProfesor__15502E78">
       <End Role="Profesor" EntitySet="Profesor" />
       <End Role="Curs" EntitySet="Curs" />
+    </AssociationSet>
+    <AssociationSet Name="FK__DenumireC__idCur__34C8D9D1" Association="Self.FK__DenumireC__idCur__34C8D9D1">
+      <End Role="Curs" EntitySet="Curs" />
+      <End Role="DenumireCursuri" EntitySet="DenumireCursuri" />
     </AssociationSet>
     <AssociationSet Name="FK__Inscriere__idCur__2F10007B" Association="Self.FK__Inscriere__idCur__2F10007B">
       <End Role="Curs" EntitySet="Curs" />
@@ -303,6 +361,10 @@
     <AssociationSet Name="FK__Profesor__id__0BC6C43E" Association="Self.FK__Profesor__id__0BC6C43E">
       <End Role="Utilizator" EntitySet="Utilizator" />
       <End Role="Profesor" EntitySet="Profesor" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Raspuns__idIntre__3D5E1FD2" Association="Self.FK__Raspuns__idIntre__3D5E1FD2">
+      <End Role="Intrebare" EntitySet="Intrebare" />
+      <End Role="Raspuns" EntitySet="Raspuns" />
     </AssociationSet>
     <AssociationSet Name="FK__Student__id__07020F21" Association="Self.FK__Student__id__07020F21">
       <End Role="Utilizator" EntitySet="Utilizator" />

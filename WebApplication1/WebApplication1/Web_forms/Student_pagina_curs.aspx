@@ -1,11 +1,12 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Profesor_pagina_curs.aspx.cs" Inherits="WebApplication1.Web_forms.Profesor_pagina_curs" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Student_pagina_curs.aspx.cs" Inherits="WebApplication1.Web_forms.Student_pagina_curs" %>
 
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title>Pagina curs</title>
-    <link rel="stylesheet" type="text/css" href="~/Css/Profesor_pagina_curs.css"/>
+    <link rel="stylesheet" type="text/css" href="~/Css/Student_pagina_curs.css"/>
+
 </head>
 <body>
     <form id="form1" runat="server">
@@ -21,7 +22,7 @@
 			</div>
 	
 			<div class="inner">
-				<div id ="cursuri"> Cursuri:  <br/><br/>
+				<div id ="cursuri"> <strong> Cursuri: </strong> <br/><br/>
 					<a href="../Images/Curs 1.pdf" >Curs 1</a><br/>
 					<a href="http://www.w3schools.com" >Curs 2</a><br/>
 					<a href="http://www.w3schools.com" >Curs 3</a><br/>
@@ -33,14 +34,16 @@
 					<a href="http://www.w3schools.com" >Curs 9</a><br/>
 					<a href="http://www.w3schools.com" >Curs 10</a><br/>
 				</div>
-			
-				<div class="butoane">
-					<button class="button" onclick=AdaugaCurs()>Adauga Curs</button><br/>
-					<button class="button" onclick=StergeCurs()>Sterge Curs</button><br/>
-					<button class="button" onclick=ModificaCurs()>Modifica Curs</button><br/>
+
+				<div id="teste"> <strong> Teste: </strong> <br/><br/>
+					<a href="http://www.w3schools.com" >Test 1</a><br/>
+					<a href="http://www.w3schools.com" >Test 2</a><br/>
+					<a href="http://www.w3schools.com" >Test 3</a><br/>
+					<a href="http://www.w3schools.com" >Test 4</a><br/>
+					<a href="http://www.w3schools.com" >Test 5</a><br/>
 				</div>
 				
-				<div id ="teme"> Teme:  <br/><br/>
+				<div id ="teme"> <strong> Teme: </strong> <br/><br/>
 					<a href="http://www.w3schools.com" >Tema 1</a><br/>
 					<a href="http://www.w3schools.com" >Tema 2</a><br/>
 					<a href="http://www.w3schools.com" >Tema 3</a><br/>
@@ -49,19 +52,12 @@
 					<a href="http://www.w3schools.com" >Tema 6</a><br/>
 				</div>
 				
-				<div class="butoaneTeme">
-					<button class="button" onclick=AdaugaTema()>Adauga Tema</button><br/>
-					<button class="button" onclick=StergeTema()>Sterge Tema</button><br/>
-					<button class="button" onclick=ModificaTema()>Modifica Tema</button><br/>
-				</div>
-				<div class="studenti">
-					<p>Studenti inscrisi:</p>
+				<div id="colegi"> <strong> Colegi inscrisi: </strong> 
 					<select multiple class = "stud"></select>
 				
 				</div>
 				
 			</div>
-			<button id="catalog" onclick=AcceseazaCatalog()>Catalog Note</button><br/>
 		</div>
 
 </body>

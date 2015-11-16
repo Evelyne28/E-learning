@@ -20,9 +20,19 @@
     <Property Name="numarCredite" Type="Int32" />
     <Property Name="idProfesor" Type="Int32" />
     <NavigationProperty Name="Profesor" Relationship="Self.FK__Curs__idProfesor__15502E78" FromRole="Curs" ToRole="Profesor" />
+    <NavigationProperty Name="DenumireCursuri" Relationship="Self.FK__DenumireC__idCur__34C8D9D1" FromRole="Curs" ToRole="DenumireCursuri" />
     <NavigationProperty Name="Inscriere" Relationship="Self.FK__Inscriere__idCur__2F10007B" FromRole="Curs" ToRole="Inscriere" />
     <NavigationProperty Name="Nota" Relationship="Self.FK__Nota__idCurs__1B0907CE" FromRole="Curs" ToRole="Nota" />
     <NavigationProperty Name="Test" Relationship="Self.FK__Test__idCurs__267ABA7A" FromRole="Curs" ToRole="Test" />
+  </EntityType>
+  <EntityType Name="DenumireCursuri">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="idCurs" Type="Int32" />
+    <Property Name="denumire" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Curs" Relationship="Self.FK__DenumireC__idCur__34C8D9D1" FromRole="DenumireCursuri" ToRole="Curs" />
   </EntityType>
   <EntityType Name="Inscriere">
     <Key>
@@ -37,6 +47,16 @@
     <Property Name="parola" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
     <NavigationProperty Name="Curs" Relationship="Self.FK__Inscriere__idCur__2F10007B" FromRole="Inscriere" ToRole="Curs" />
     <NavigationProperty Name="Student" Relationship="Self.FK__Inscriere__idStu__2E1BDC42" FromRole="Inscriere" ToRole="Student" />
+  </EntityType>
+  <EntityType Name="Intrebare">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="mesaj" Type="String" MaxLength="5000" FixedLength="false" Unicode="false" />
+    <Property Name="utilizator" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="dataIntrebare" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="Raspuns" Relationship="Self.FK__Raspuns__idIntre__3D5E1FD2" FromRole="Intrebare" ToRole="Raspuns" />
   </EntityType>
   <EntityType Name="Nota">
     <Key>
@@ -60,6 +80,17 @@
     <NavigationProperty Name="Utilizator" Relationship="Self.FK__Profesor__id__0BC6C43E" FromRole="Profesor" ToRole="Utilizator" />
     <NavigationProperty Name="Tema" Relationship="Self.FK__Tema__idProfesor__20C1E124" FromRole="Profesor" ToRole="Tema" />
     <NavigationProperty Name="Test" Relationship="Self.FK__Test__idProfesor__286302EC" FromRole="Profesor" ToRole="Test" />
+  </EntityType>
+  <EntityType Name="Raspuns">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="idIntrebare" Type="Int32" />
+    <Property Name="mesaj" Type="String" MaxLength="5000" FixedLength="false" Unicode="false" />
+    <Property Name="utilizator" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="dataRaspuns" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="Intrebare" Relationship="Self.FK__Raspuns__idIntre__3D5E1FD2" FromRole="Raspuns" ToRole="Intrebare" />
   </EntityType>
   <EntityType Name="Student">
     <Key>
@@ -164,6 +195,18 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK__DenumireC__idCur__34C8D9D1">
+    <End Role="Curs" Type="Self.Curs" Multiplicity="0..1" />
+    <End Role="DenumireCursuri" Type="Self.DenumireCursuri" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Curs">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="DenumireCursuri">
+        <PropertyRef Name="idCurs" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK__Inscriere__idCur__2F10007B">
     <End Role="Curs" Type="Self.Curs" Multiplicity="1" />
     <End Role="Inscriere" Type="Self.Inscriere" Multiplicity="*" />
@@ -209,6 +252,18 @@
       </Principal>
       <Dependent Role="Inscriere">
         <PropertyRef Name="idStudent" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Raspuns__idIntre__3D5E1FD2">
+    <End Role="Intrebare" Type="Self.Intrebare" Multiplicity="0..1" />
+    <End Role="Raspuns" Type="Self.Raspuns" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Intrebare">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Raspuns">
+        <PropertyRef Name="idIntrebare" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -296,12 +351,15 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <EntityContainer Name="ResearchersEntities1" annotation:LazyLoadingEnabled="true">
+  <EntityContainer Name="ResearchersEntities2" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="Asistent" EntityType="Self.Asistent" />
     <EntitySet Name="Curs" EntityType="Self.Curs" />
+    <EntitySet Name="DenumireCursuri" EntityType="Self.DenumireCursuri" />
     <EntitySet Name="Inscriere" EntityType="Self.Inscriere" />
+    <EntitySet Name="Intrebare" EntityType="Self.Intrebare" />
     <EntitySet Name="Nota" EntityType="Self.Nota" />
     <EntitySet Name="Profesor" EntityType="Self.Profesor" />
+    <EntitySet Name="Raspuns" EntityType="Self.Raspuns" />
     <EntitySet Name="Student" EntityType="Self.Student" />
     <EntitySet Name="Tema" EntityType="Self.Tema" />
     <EntitySet Name="Test" EntityType="Self.Test" />
@@ -322,6 +380,10 @@
       <End Role="Profesor" EntitySet="Profesor" />
       <End Role="Curs" EntitySet="Curs" />
     </AssociationSet>
+    <AssociationSet Name="FK__DenumireC__idCur__34C8D9D1" Association="Self.FK__DenumireC__idCur__34C8D9D1">
+      <End Role="Curs" EntitySet="Curs" />
+      <End Role="DenumireCursuri" EntitySet="DenumireCursuri" />
+    </AssociationSet>
     <AssociationSet Name="FK__Inscriere__idCur__2F10007B" Association="Self.FK__Inscriere__idCur__2F10007B">
       <End Role="Curs" EntitySet="Curs" />
       <End Role="Inscriere" EntitySet="Inscriere" />
@@ -337,6 +399,10 @@
     <AssociationSet Name="FK__Inscriere__idStu__2E1BDC42" Association="Self.FK__Inscriere__idStu__2E1BDC42">
       <End Role="Student" EntitySet="Student" />
       <End Role="Inscriere" EntitySet="Inscriere" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Raspuns__idIntre__3D5E1FD2" Association="Self.FK__Raspuns__idIntre__3D5E1FD2">
+      <End Role="Intrebare" EntitySet="Intrebare" />
+      <End Role="Raspuns" EntitySet="Raspuns" />
     </AssociationSet>
     <AssociationSet Name="FK__Nota__idStudent__1A14E395" Association="Self.FK__Nota__idStudent__1A14E395">
       <End Role="Student" EntitySet="Student" />

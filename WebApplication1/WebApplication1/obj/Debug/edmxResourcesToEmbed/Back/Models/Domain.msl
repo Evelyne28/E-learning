@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="ResearchersModelStoreContainer" CdmEntityContainer="ResearchersEntities1">
+  <EntityContainerMapping StorageEntityContainer="ResearchersModelStoreContainer" CdmEntityContainer="ResearchersEntities2">
     <EntitySetMapping Name="Asistent">
       <EntityTypeMapping TypeName="ResearchersModel.Asistent">
         <MappingFragment StoreEntitySet="Asistent">
@@ -20,6 +20,15 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="DenumireCursuri">
+      <EntityTypeMapping TypeName="ResearchersModel.DenumireCursuri">
+        <MappingFragment StoreEntitySet="DenumireCursuri">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="idCurs" ColumnName="idCurs" />
+          <ScalarProperty Name="denumire" ColumnName="denumire" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="Inscriere">
       <EntityTypeMapping TypeName="ResearchersModel.Inscriere">
         <MappingFragment StoreEntitySet="Inscriere">
@@ -29,6 +38,16 @@
           <ScalarProperty Name="prenumeStudent" ColumnName="prenumeStudent" />
           <ScalarProperty Name="email" ColumnName="email" />
           <ScalarProperty Name="parola" ColumnName="parola" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Intrebare">
+      <EntityTypeMapping TypeName="ResearchersModel.Intrebare">
+        <MappingFragment StoreEntitySet="Intrebare">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="mesaj" ColumnName="mesaj" />
+          <ScalarProperty Name="utilizator" ColumnName="utilizator" />
+          <ScalarProperty Name="dataIntrebare" ColumnName="dataIntrebare" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -47,6 +66,17 @@
           <ScalarProperty Name="id" ColumnName="id" />
           <ScalarProperty Name="nume" ColumnName="nume" />
           <ScalarProperty Name="prenume" ColumnName="prenume" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Raspuns">
+      <EntityTypeMapping TypeName="ResearchersModel.Raspuns">
+        <MappingFragment StoreEntitySet="Raspuns">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="idIntrebare" ColumnName="idIntrebare" />
+          <ScalarProperty Name="mesaj" ColumnName="mesaj" />
+          <ScalarProperty Name="utilizator" ColumnName="utilizator" />
+          <ScalarProperty Name="dataRaspuns" ColumnName="dataRaspuns" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

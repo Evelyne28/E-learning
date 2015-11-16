@@ -100,6 +100,9 @@
     <Compile Include="Back\Models\Curs.cs">
       <DependentUpon>Domain.tt</DependentUpon>
     </Compile>
+    <Compile Include="Back\Models\DenumireCursuri.cs">
+      <DependentUpon>Domain.tt</DependentUpon>
+    </Compile>
     <Compile Include="Back\Models\Domain.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -118,6 +121,9 @@
     <Compile Include="Back\Models\Inscriere.cs">
       <DependentUpon>Domain.tt</DependentUpon>
     </Compile>
+    <Compile Include="Back\Models\Intrebare.cs">
+      <DependentUpon>Domain.tt</DependentUpon>
+    </Compile>
     <Compile Include="Back\Models\Nota.cs">
       <DependentUpon>Domain.tt</DependentUpon>
     </Compile>
@@ -125,6 +131,9 @@
       <DependentUpon>Domain.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Back\Models\Raspuns.cs">
+      <DependentUpon>Domain.tt</DependentUpon>
+    </Compile>
     <Compile Include="Back\Models\Student.cs">
       <DependentUpon>Domain.tt</DependentUpon>
     </Compile>

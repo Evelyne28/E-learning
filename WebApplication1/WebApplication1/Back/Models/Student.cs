@@ -33,14 +33,5 @@ namespace WebApplication1.Back.Models
         public virtual Utilizator Utilizator { get; set; }
         public virtual ICollection<Tema> Tema { get; set; }
         public virtual ICollection<Test> Test { get; set; }
-
-        public Student(int id, string nume, string prenume, string telefon, string email)
-        {
-            this.id = id;
-            this.nume = nume;
-            this.prenume = prenume;
-            this.telefon = telefon;
-            this.email = email;
-        }
     }
 }
