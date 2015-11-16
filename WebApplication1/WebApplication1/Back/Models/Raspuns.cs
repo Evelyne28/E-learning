@@ -12,24 +12,14 @@ namespace WebApplication1.Back.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class Utilizator
+    public partial class Raspuns
     {
         public int id { get; set; }
-        public string username { get; set; }
-        public string parola { get; set; }
-        public Nullable<int> rol { get; set; }
+        public Nullable<int> idIntrebare { get; set; }
+        public string mesaj { get; set; }
+        public string utilizator { get; set; }
+        public Nullable<System.DateTime> dataRaspuns { get; set; }
     
-        public virtual Asistent Asistent { get; set; }
-        public virtual Profesor Profesor { get; set; }
-        public virtual Student Student { get; set; }
-
-        public Utilizator() { }
-        public Utilizator(int id, string user, string parola, int rol)
-        {
-            this.id = id;
-            this.username = user;
-            this.parola = parola;
-            this.rol = rol;
-        }
+        public virtual Intrebare Intrebare { get; set; }
     }
 }

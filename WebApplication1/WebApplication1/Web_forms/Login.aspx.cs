@@ -28,41 +28,44 @@ namespace WebApplication1.Web_forms
             {
                 password = Request.Form["userPassword"];
             }
-            Utilizator u = controller.findUser(userName, password);
-            int rol = controller.findUserIdentity(u);
-            //in functie de rolul gasit se afiseaza pagina corespunzatoare
-            if (u != null && rol == 0)
+            try
             {
-                Session["userName"] = userName;
-                Session["userPassword"] = password;
-                Response.Redirect("Admin_start.aspx"); //admin
+                Utilizator u = controller.findUser(userName, password);
+
+                int rol = controller.findUserIdentity(u);
+                //in functie de rolul gasit se afiseaza pagina corespunzatoare
+                if (u != null && rol == 0)
+                {
+                    Session["userName"] = userName;
+                    Session["userPassword"] = password;
+                    Response.Redirect("Admin_start.aspx");
+                }
+                else if (u != null && rol == 1)
+                {
+                    Session["userName"] = userName;
+                    Session["userPassword"] = password;
+                    Response.Redirect("Profesor_start.aspx");
+                }
+                else if (u != null && rol == 2)
+                {
+                    Session["userName"] = userName;
+                    Session["userPassword"] = password;
+                    Response.Redirect("Student_pagina_curs.aspx");
+                }
+               
+
+                else if (u != null && rol == 3)
+                {
+                    Session["userName"] = userName;
+                    Session["userPassword"] = password;
+                    Response.Redirect("Asistent_start.aspx");
+                }
+               
             }
-            else
-                Response.Write("Incorrect!");
-            if (u != null && rol == 1) 
+            catch (Exception)
             {
-                Session["userName"] = userName;
-                Session["userPassword"] = password;
-                Response.Redirect("Student_pagina_curs.aspx"); //student
+                Response.Write("User-ul sau parola sunt introduse gresit");
             }
-            else
-                Response.Write("Incorrect!");
-            if (u != null && rol==2)
-            {
-                Session["userName"] = userName;
-                Session["userPassword"] = password;
-                Response.Redirect("Profesor_start.aspx"); //profesor
-            }
-            else
-                Response.Write("Incorrect!");
-            if (u != null && rol == 3)
-            {
-                Session["userName"] = userName;
-                Session["userPassword"] = password;
-                Response.Redirect("Asistent_start.aspx"); //asistent
-            }
-            else
-                Response.Write("Incorrect!");
         }
     }
 }

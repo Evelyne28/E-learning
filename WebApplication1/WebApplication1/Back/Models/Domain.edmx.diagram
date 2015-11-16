@@ -4,31 +4,36 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="4a93581e5e224dbea4eb5404973758e6" Name="Diagram1">
-        <EntityTypeShape EntityType="ResearchersModel.Asistent" Width="1.5" PointX="3" PointY="5" IsExpanded="true" />
-        <EntityTypeShape EntityType="ResearchersModel.Curs" Width="1.5" PointX="5.25" PointY="8" IsExpanded="true" />
-        <EntityTypeShape EntityType="ResearchersModel.Inscriere" Width="1.5" PointX="7.5" PointY="12.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="ResearchersModel.Nota" Width="1.5" PointX="10.5" PointY="10.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="ResearchersModel.Profesor" Width="1.5" PointX="3" PointY="8" IsExpanded="true" />
-        <EntityTypeShape EntityType="ResearchersModel.Student" Width="1.5" PointX="3" PointY="11.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="ResearchersModel.Tema" Width="1.5" PointX="5.25" PointY="11.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="ResearchersModel.Test" Width="1.5" PointX="7.5" PointY="8.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="ResearchersModel.Utilizator" Width="1.5" PointX="0.75" PointY="8.375" IsExpanded="true" />
-        <AssociationConnector Association="ResearchersModel.FK__Asistent__id__1A14E395" ManuallyRouted="false" />
-        <AssociationConnector Association="ResearchersModel.FK__Tema__idAsistent__25869641" ManuallyRouted="false" />
-        <AssociationConnector Association="ResearchersModel.FK__Test__idAsistent__2B3F6F97" ManuallyRouted="false" />
-        <AssociationConnector Association="ResearchersModel.FK__Curs__idProfesor__1CF15040" ManuallyRouted="false" />
+      <Diagram DiagramId="4f87ce15a5e94cdfa7653348878bc8ce" Name="Diagram1">
+        <EntityTypeShape EntityType="ResearchersModel.Asistent" Width="1.5" PointX="3" PointY="6.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ResearchersModel.Curs" Width="1.5" PointX="5.25" PointY="9.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="ResearchersModel.DenumireCursuri" Width="1.5" PointX="7.5" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ResearchersModel.Inscriere" Width="1.5" PointX="10.5" PointY="11.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="ResearchersModel.Intrebare" Width="1.5" PointX="0.75" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="ResearchersModel.Nota" Width="1.5" PointX="10.5" PointY="8.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ResearchersModel.Profesor" Width="1.5" PointX="3" PointY="9.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ResearchersModel.Raspuns" Width="1.5" PointX="3" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ResearchersModel.Student" Width="1.5" PointX="3" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ResearchersModel.Tema" Width="1.5" PointX="5.25" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ResearchersModel.Test" Width="1.5" PointX="7.5" PointY="12.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ResearchersModel.Utilizator" Width="1.5" PointX="0.75" PointY="9.875" IsExpanded="true" />
+        <AssociationConnector Association="ResearchersModel.FK__Asistent__id__108B795B" ManuallyRouted="false" />
+        <AssociationConnector Association="ResearchersModel.FK__Tema__idAsistent__21B6055D" ManuallyRouted="false" />
+        <AssociationConnector Association="ResearchersModel.FK__Test__idAsistent__29572725" ManuallyRouted="false" />
+        <AssociationConnector Association="ResearchersModel.FK__Curs__idProfesor__15502E78" ManuallyRouted="false" />
+        <AssociationConnector Association="ResearchersModel.FK__DenumireC__idCur__34C8D9D1" ManuallyRouted="false" />
         <AssociationConnector Association="ResearchersModel.FK__Inscriere__idCur__2F10007B" ManuallyRouted="false" />
-        <AssociationConnector Association="ResearchersModel.FK__Nota__idCurs__20C1E124" ManuallyRouted="false" />
-        <AssociationConnector Association="ResearchersModel.FK__Test__idCurs__286302EC" ManuallyRouted="false" />
+        <AssociationConnector Association="ResearchersModel.FK__Nota__idCurs__1B0907CE" ManuallyRouted="false" />
+        <AssociationConnector Association="ResearchersModel.FK__Test__idCurs__267ABA7A" ManuallyRouted="false" />
         <AssociationConnector Association="ResearchersModel.FK__Inscriere__idStu__2E1BDC42" ManuallyRouted="false" />
-        <AssociationConnector Association="ResearchersModel.FK__Nota__idStudent__1FCDBCEB" ManuallyRouted="false" />
-        <AssociationConnector Association="ResearchersModel.FK__Profesor__id__173876EA" ManuallyRouted="false" />
-        <AssociationConnector Association="ResearchersModel.FK__Tema__idProfesor__24927208" ManuallyRouted="false" />
-        <AssociationConnector Association="ResearchersModel.FK__Test__idProfesor__2A4B4B5E" ManuallyRouted="false" />
-        <AssociationConnector Association="ResearchersModel.FK__Student__id__145C0A3F" ManuallyRouted="false" />
-        <AssociationConnector Association="ResearchersModel.FK__Tema__idStudent__239E4DCF" ManuallyRouted="false" />
-        <AssociationConnector Association="ResearchersModel.FK__Test__idStudent__29572725" ManuallyRouted="false" />
+        <AssociationConnector Association="ResearchersModel.FK__Raspuns__idIntre__3D5E1FD2" ManuallyRouted="false" />
+        <AssociationConnector Association="ResearchersModel.FK__Nota__idStudent__1A14E395" ManuallyRouted="false" />
+        <AssociationConnector Association="ResearchersModel.FK__Profesor__id__0BC6C43E" ManuallyRouted="false" />
+        <AssociationConnector Association="ResearchersModel.FK__Tema__idProfesor__20C1E124" ManuallyRouted="false" />
+        <AssociationConnector Association="ResearchersModel.FK__Test__idProfesor__286302EC" ManuallyRouted="false" />
+        <AssociationConnector Association="ResearchersModel.FK__Student__id__07020F21" ManuallyRouted="false" />
+        <AssociationConnector Association="ResearchersModel.FK__Tema__idStudent__1FCDBCEB" ManuallyRouted="false" />
+        <AssociationConnector Association="ResearchersModel.FK__Test__idStudent__276EDEB3" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

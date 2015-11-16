@@ -16,6 +16,7 @@ namespace WebApplication1.Back.Models
     {
         public Curs()
         {
+            this.DenumireCursuri = new HashSet<DenumireCursuri>();
             this.Inscriere = new HashSet<Inscriere>();
             this.Nota = new HashSet<Nota>();
             this.Test = new HashSet<Test>();
@@ -27,6 +28,7 @@ namespace WebApplication1.Back.Models
         public Nullable<int> idProfesor { get; set; }
     
         public virtual Profesor Profesor { get; set; }
+        public virtual ICollection<DenumireCursuri> DenumireCursuri { get; set; }
         public virtual ICollection<Inscriere> Inscriere { get; set; }
         public virtual ICollection<Nota> Nota { get; set; }
         public virtual ICollection<Test> Test { get; set; }
