@@ -28,7 +28,6 @@ namespace WebApplication1.Web_forms
             {
                 password = Request.Form["userPassword"];
             }
-<<<<<<< .merge_file_a05980
             try
             {
                 Utilizator u = controller.findUser(userName, password);
@@ -39,7 +38,7 @@ namespace WebApplication1.Web_forms
                 {
                     Session["userName"] = userName;
                     Session["userPassword"] = password;
-                    Response.Redirect("Profesor_start.aspx");
+                    Response.Redirect("Admin_start.aspx");
                 }
                 else if (u != null && rol == 1)
                 {
@@ -51,7 +50,7 @@ namespace WebApplication1.Web_forms
                 {
                     Session["userName"] = userName;
                     Session["userPassword"] = password;
-                    Response.Redirect("Profesor_start.aspx");
+                    Response.Redirect("Student_pagina_curs.aspx");
                 }
                
 
@@ -62,42 +61,10 @@ namespace WebApplication1.Web_forms
                     Response.Redirect("Asistent_start.aspx");
                 }
                
-=======
-            Utilizator u = controller.findUser(userName, password);
-            int rol = controller.findUserIdentity(u);
-            //in functie de rolul gasit se afiseaza pagina corespunzatoare
-            if (u != null && rol == 0)
-            {
-                Session["userName"] = userName;
-                Session["userPassword"] = password;
-                Response.Redirect("Admin_start.aspx"); //admin
-            }
-            else
-                Response.Write("Incorrect!");
-            if (u != null && rol == 1) 
-            {
-                Session["userName"] = userName;
-                Session["userPassword"] = password;
-                Response.Redirect("Student_pagina_curs.aspx"); //student
-            }
-            else
-                Response.Write("Incorrect!");
-            if (u != null && rol==2)
-            {
-                Session["userName"] = userName;
-                Session["userPassword"] = password;
-                Response.Redirect("Profesor_start.aspx"); //profesor
->>>>>>> .merge_file_a05760
             }
             catch (Exception)
             {
-<<<<<<< .merge_file_a05980
                 Response.Write("User-ul sau parola sunt introduse gresit");
-=======
-                Session["userName"] = userName;
-                Session["userPassword"] = password;
-                Response.Redirect("Asistent_start.aspx"); //asistent
->>>>>>> .merge_file_a05760
             }
         }
     }

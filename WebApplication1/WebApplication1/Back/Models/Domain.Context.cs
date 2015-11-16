@@ -13,10 +13,10 @@ namespace WebApplication1.Back.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class ResearchersEntities2 : DbContext
+    public partial class ResearchersEntities4 : DbContext
     {
-        public ResearchersEntities2()
-            : base("name=ResearchersEntities2")
+        public ResearchersEntities4()
+            : base("name=ResearchersEntities4")
         {
         }
     

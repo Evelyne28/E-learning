@@ -29,5 +29,12 @@ namespace WebApplication1.Back.Models
         public virtual Utilizator Utilizator { get; set; }
         public virtual ICollection<Tema> Tema { get; set; }
         public virtual ICollection<Test> Test { get; set; }
+
+        public Profesor(int id, string nume, string prenume)
+        {
+            this.id = id;
+            this.nume = nume;
+            this.prenume = prenume;
+        }
     }
 }

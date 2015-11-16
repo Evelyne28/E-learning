@@ -72,24 +72,29 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Css\Admin_start.css" />
     <Content Include="Css\Asistent_start.css" />
     <Content Include="Css\Calendar.css" />
     <Content Include="Css\login.css" />
     <Content Include="Css\Profesor_pagina_curs.css" />
     <Content Include="Css\Profesor_start.css" />
+    <Content Include="Css\Student_pagina_curs.css" />
     <Content Include="Images\blue.jpg" />
     <Content Include="Images\book.jpg" />
     <Content Include="Images\e-learning.jpg" />
     <Content Include="Images\gradient.gif" />
+    <Content Include="Images\lightBlue.jpg" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
+    <Content Include="Web_forms\Admin_start.aspx" />
     <Content Include="Web_forms\Asistent_start.aspx" />
     <Content Include="Web_forms\Calendar.aspx" />
     <Content Include="Web_forms\Home.aspx" />
     <Content Include="Web_forms\Login.aspx" />
     <Content Include="Web_forms\Profesor_pagina_curs.aspx" />
     <Content Include="Web_forms\Profesor_start.aspx" />
+    <Content Include="Web_forms\Student_pagina_curs.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Back\Models\Asistent.cs">
@@ -146,6 +151,13 @@
     <Compile Include="Back\Models\Utilizator.cs">
       <DependentUpon>Domain.tt</DependentUpon>
     </Compile>
+    <Compile Include="Web_forms\Admin_start.aspx.cs">
+      <DependentUpon>Admin_start.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Web_forms\Admin_start.aspx.designer.cs">
+      <DependentUpon>Admin_start.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Web_forms\Asistent_start.aspx.cs">
       <DependentUpon>Asistent_start.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -187,6 +199,13 @@
     </Compile>
     <Compile Include="Web_forms\Profesor_start.aspx.designer.cs">
       <DependentUpon>Profesor_start.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Web_forms\Student_pagina_curs.aspx.cs">
+      <DependentUpon>Student_pagina_curs.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Web_forms\Student_pagina_curs.aspx.designer.cs">
+      <DependentUpon>Student_pagina_curs.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

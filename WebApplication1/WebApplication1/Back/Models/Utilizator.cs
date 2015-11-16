@@ -22,5 +22,14 @@ namespace WebApplication1.Back.Models
         public virtual Asistent Asistent { get; set; }
         public virtual Profesor Profesor { get; set; }
         public virtual Student Student { get; set; }
+
+        public Utilizator() { }
+        public Utilizator(int id, string user, string parola, int rol)
+        {
+            this.id = id;
+            this.username = user;
+            this.parola = parola;
+            this.rol = rol;
+        }
     }
 }

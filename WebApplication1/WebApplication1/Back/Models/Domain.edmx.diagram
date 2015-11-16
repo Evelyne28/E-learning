@@ -4,15 +4,15 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="c213d4e574ff4f47abc19c5271913f92" Name="Diagram1">
+      <Diagram DiagramId="4f87ce15a5e94cdfa7653348878bc8ce" Name="Diagram1">
         <EntityTypeShape EntityType="ResearchersModel.Asistent" Width="1.5" PointX="3" PointY="6.375" IsExpanded="true" />
         <EntityTypeShape EntityType="ResearchersModel.Curs" Width="1.5" PointX="5.25" PointY="9.25" IsExpanded="true" />
         <EntityTypeShape EntityType="ResearchersModel.DenumireCursuri" Width="1.5" PointX="7.5" PointY="9.75" IsExpanded="true" />
         <EntityTypeShape EntityType="ResearchersModel.Inscriere" Width="1.5" PointX="10.5" PointY="11.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="ResearchersModel.Intrebare" Width="1.5" PointX="1.625" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="ResearchersModel.Intrebare" Width="1.5" PointX="0.75" PointY="1" IsExpanded="true" />
         <EntityTypeShape EntityType="ResearchersModel.Nota" Width="1.5" PointX="10.5" PointY="8.5" IsExpanded="true" />
         <EntityTypeShape EntityType="ResearchersModel.Profesor" Width="1.5" PointX="3" PointY="9.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="ResearchersModel.Raspuns" Width="1.5" PointX="6.375" PointY="3.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ResearchersModel.Raspuns" Width="1.5" PointX="3" PointY="0.875" IsExpanded="true" />
         <EntityTypeShape EntityType="ResearchersModel.Student" Width="1.5" PointX="3" PointY="12.75" IsExpanded="true" />
         <EntityTypeShape EntityType="ResearchersModel.Tema" Width="1.5" PointX="5.25" PointY="12.75" IsExpanded="true" />
         <EntityTypeShape EntityType="ResearchersModel.Test" Width="1.5" PointX="7.5" PointY="12.5" IsExpanded="true" />

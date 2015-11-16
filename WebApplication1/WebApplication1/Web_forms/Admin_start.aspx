@@ -8,10 +8,10 @@
     <link rel="stylesheet" type="text/css" href="~/Css/Admin_start.css"/>
     <link rel="stylesheet" type="text/css" href="~/Css/Calendar.css"/>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js" type="text/javascript"></script> 
-	<script > 
-	$(document).ready(function(){
-		document.getElementById("calendar").innerHTML='<object id="calendar" type="text/html" data="Calendar.aspx#jan"></object>';
-    });
+	<script >
+	    $(document).ready(function () {
+	        document.getElementById("calendar").innerHTML = '<object id="calendar" type="text/html" data="Calendar.aspx#jan"></object>';
+	    });
     </script> 
 
 </head>
@@ -20,7 +20,7 @@
     <div>
     
     </div>
-    </form>
+    
     <div class="outer">
 			<div class="header">
 				<p id="welcome">Welcome <%:Session["userName"]%></p>
@@ -29,11 +29,11 @@
 				<a href="http://www.w3schools.com" class="headerRight" >Mesaje</a>
 			</div>
 	
-			<div class="inner">
+			<div class="inner" >
 				<div id = "utilizatori">  <strong> Utilizatori: </strong> <br/><br/>
 					<select multiple class = "users"></select>
 				</div>
-				<div class = "outerData"> 
+				<div class = "outerData" runat="server"> 
 					<p id="gestiune"> <strong> Gestiune utilizatori </strong> </p>
 					<p> ID Utilizator: <input type="text" name="idUtilizator"/></p>
         			<p> Nume: <input type="text" name="nume"/></p>
@@ -44,6 +44,7 @@
         			<p> Username: <input type="text" name="userName"/></p>
         			<p> Parola: <input type="text" name="parola"/></p>
 				</div>
+                
 
 				<div class="butoane">
 					<br/>
@@ -52,14 +53,17 @@
 					<br/>
 					<br/>
 					<br/>
-					<button class="button" onclick="">Adauga utilizator</button><br/>
-					<button class="button" onclick="">Sterge utilizator</button><br/>
-					<button class="button" onclick="">Modifica utilizator</button><br/>
+                    <asp:Button class="button" ID="Adauga" runat="server" Text="Adauga utilizator" onclick="btn_Adauga_Click"></asp:Button><br/>
+					<asp:Button class="button" ID="Sterge" runat="server" Text="Sterge utilizator" onclick="btn_Sterge_Click"></asp:Button><br/>
+					<asp:Button class="button" ID="Modifica" runat="server" Text="Modifica utilizator" onclick="btn_Modifica_Click"></asp:Button><br/>
+                  
 				</div>
-
+        
 			</div>
-			
+		
 		</div>
+        </form>
     <div id="calendar"></div>
+
 </body>
 </html>

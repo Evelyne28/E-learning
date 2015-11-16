@@ -760,7 +760,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="ResearchersEntities2" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="ResearchersEntities4" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Asistent" EntityType="Self.Asistent" />
           <EntitySet Name="Curs" EntityType="Self.Curs" />
           <EntitySet Name="DenumireCursuri" EntityType="Self.DenumireCursuri" />
@@ -847,7 +847,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="ResearchersModelStoreContainer" CdmEntityContainer="ResearchersEntities2">
+        <EntityContainerMapping StorageEntityContainer="ResearchersModelStoreContainer" CdmEntityContainer="ResearchersEntities4">
           <EntitySetMapping Name="Asistent">
             <EntityTypeMapping TypeName="ResearchersModel.Asistent">
               <MappingFragment StoreEntitySet="Asistent">

@@ -12,7 +12,6 @@ namespace WebApplication1.Back.RepositoryNamespace
     {
         public List<Utilizator> users;
         public List<Profesor> profesori;
-        ResearchersEntities2 context = new ResearchersEntities2();
         public Repository()
         {
             this.users = this.getUsers();
@@ -53,7 +52,7 @@ namespace WebApplication1.Back.RepositoryNamespace
         public List<Profesor> getListaProfesori()
         {
             profesori = new List<Profesor>();
-            
+            ResearchersEntities4 context = new ResearchersEntities4();
             var load = from a in context.Profesor select a;
             if (load != null)
             {
@@ -66,11 +65,19 @@ namespace WebApplication1.Back.RepositoryNamespace
         //populeaza lista de utilizatori din baza de date si o returneaza
         public List<Utilizator> getUsers()
         {
+            ResearchersEntities4 context = new ResearchersEntities4();
             users = new List<Utilizator>();
             var load = from a in context.Utilizator select a;
             if (load != null)
             {
-                users = load.ToList();
+                try
+                {
+                    users = load.ToList();
+                }
+                catch (Exception ex)
+                {
+                    string exx = ex.InnerException.ToString();
+                }
             }
             return this.users;
         }
@@ -90,6 +97,7 @@ namespace WebApplication1.Back.RepositoryNamespace
         //adauga un utilizator
         public bool adaugaUtiliz(int id,string nume,string prenume,string email,string telefon,int rol, string user,string parola)
         {
+            ResearchersEntities4 context = new ResearchersEntities4();
             if (cauta(id)) return false;
             Utilizator u = new Utilizator(id, user, parola, rol);
             context.Utilizator.Add(u);
@@ -120,6 +128,7 @@ namespace WebApplication1.Back.RepositoryNamespace
         //sterge un utilizator
         public bool stergeUtiliz(int id)
         {
+            ResearchersEntities4 context = new ResearchersEntities4();
             if (cauta(id) == false)
                 return false;
             List<Utilizator> ut = getUsers();
@@ -156,6 +165,7 @@ namespace WebApplication1.Back.RepositoryNamespace
         //modifica un utilizator
         public bool modificaUtiliz(int id, string numeN, string prenumeN, string emailN, string telefonN, string parolaN)
         {
+            ResearchersEntities4 context = new ResearchersEntities4();
             if (cauta(id) == false)
                 return false;
             Utilizator u = context.Utilizator.Find(id);
