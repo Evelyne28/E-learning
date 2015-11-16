@@ -1,6 +1,12 @@
-﻿body {
+﻿html {
+	background-image: url('../Images/lightblue-background.jpg');
+    background-size: 100%;
+}
+
+body {
 	margin: 0px;
 	height: 100%;
+    width:inherit;
 }
 
 .outer {
@@ -10,10 +16,6 @@
 
 .header {
 	height: 100px;
-	background-image: url('../Images/gradient.gif');
-    background-size: 100%;
-    background-repeat: no-repeat;
-    background-position: bottom;
 }
 
 #welcome {
@@ -35,7 +37,7 @@
 	float:left;
 }
 .butoaneTeme{margin:15px 200px 15px 15px;float:left; }
-.butoaneTeme #button{
+.butoaneTeme .button{
 	width:130px;
 	margin:5px;
 	border-radius: 5px;
@@ -44,7 +46,7 @@
 	background-color:#66CCCC;
 }
 .butoane{margin:15px 200px 15px 15px; width:141px; float:left;}
-.butoane #button{
+.butoane .button{
 	width:130px;
 	margin:5px;
 	border-radius: 5px;

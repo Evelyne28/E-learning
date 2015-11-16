@@ -1,0 +1,98 @@
+﻿html {
+	background-image: url('../Images/lightBlue.jpg');
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+body {
+	margin: 0px;
+	height: 100%;
+}
+
+.outer {
+	width: 100%;
+	height: 100%;
+}
+
+.header {
+	height: 100px;
+}
+
+.headerRight {
+	float: right;
+	padding: 5px;
+}
+
+#welcome {
+	margin: 0px;
+	left: 2%;
+	top: 5px;
+	position: relative;
+	font-size: 25px;
+}
+
+#utilizatori {
+	text-align: center;
+	float: left;
+	font-family: 'PT Mono', sans-serif;
+
+}
+
+.users{
+	height:500px;
+	width:200px;
+}
+
+.inner {
+	width:100%;
+	padding-left: 25px;
+}
+
+.outerData {
+	width: 50%;
+	position: relative;
+	float: right;
+	right: 20%;
+}
+
+#gestiune {
+	position: relative;
+	left: 10%;
+	font-family: 'PT Mono', sans-serif;
+
+}
+
+input {
+	position: relative;
+	float: right;
+	right: 60%;
+}
+
+.butoane {
+	margin: 15px;
+	left: 40%;
+	position: relative;
+	width: 30%;
+}
+
+.butoane .button{
+	width:130px;
+	margin:5px;
+	border-radius: 5px;
+	font-size: 15px;
+	font-family: 'PT Mono', sans-serif;
+	background-color:#66CCCC;
+}
+
+div #calendar{
+	float:right;
+	margin:5px;
+    left: 40%;
+    top: 30%;
+    position: relative;
+}
+object#calendar{
+	margin:5px;
+	width:270px;
+    height: 370px;
+}
